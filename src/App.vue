@@ -1,8 +1,8 @@
 <template>
-  <div v-for="(item, idx) in sampleArray" :key="idx">
-    <h1>
-      {{ item }}
-    </h1>
+  <div class="wrapper">
+    <div v-for="item in otherArray" :key="item.id">
+      <h1>{{ item.name }}</h1>
+    </div>
   </div>
 </template>
 
@@ -11,9 +11,27 @@ export default {
   data() {
     return {
       sampleArray: ["a", "b", "c", "d", "e", "f", "g"],
+      otherArray: [
+        {
+          id: 0,
+          name: "han",
+        },
+        {
+          id: 1,
+          name: "eun",
+        },
+        {
+          id: 2,
+          name: "beom",
+        },
+      ],
     };
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.wrapper {
+  display: flex;
+}
+</style>
